@@ -1,0 +1,13 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+​android {
+namespace "com.example.maria_app"
+compileSdkVersion 33
+​defaultConfig {
+applicationId "com.example.maria_app"
+minSdkVersion 21
+targetSdkVersion 33
+versionCode 1
+versionName "1.0"
+}
