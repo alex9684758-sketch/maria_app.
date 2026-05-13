@@ -10,4 +10,244 @@ minSdkVersion 21
 targetSdkVersion 33
 versionCode 1
 versionName "1.0"
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+​android {
+namespace "com.example.maria_app"
+compileSdkVersion 33
+​defaultConfig {
+applicationId "com.example.maria_app"
+minSdkVersion 21
+targetSdkVersion 33
+versionCode 1
+versionName "1.0"
+}Rename main.dart. to lib/main.dart
+Build Maria APK #2: Commit 0278ae4 pushed by alex9684758-sketch
+1 minute ago
+ 6s static main(args) {
+    name: Build Maria APK
+    on: [push]
+    jobs:
+      build:
+          runs-on: ubuntu-latest
+              steps:
+                    - uses: actions/checkout@v3
+                          - uses: subosito/flutter-action@v2
+                                  with:
+                                            channel: 'stable'
+                                                  - run: flutter build apk --debug
+                                                        - uses: actions/upload-artifact@v3
+                                                                with:
+                                                                          name: maria-apk
+                                                                                    path: build/app/outputs/flutter-apk/app-debug.apkname: Build Maria APK
+                                                                                    on: [push]
+                                                                                    jobs:
+                                                                                      build:
+                                                                                          runs-on: ubuntu-latest
+                                                                                              steps:
+                                                                                                    - uses: actions/checkout@v3
+                                                                                                          - uses: subosito/flutter-action@v2
+                                                                                                                  with:
+                                                                                                                            channel: 'stable'
+                                                                                                                                  - run: flutter build apk --debug
+                                                                                                                                        - uses: actions/upload-artifact@v3
+                                                                                                                                                with:
+                                                                                                                                                          name: maria-apk
+                                                                                                                                                                    path: build/app/outputs/flutter-apk/app-debug.apkname: Build Maria APK
+                                                                                                                                                                    on: [push]
+                                                                                                                                                                    jobs:
+                                                                                                                                                                      build:
+                                                                                                                                                                          runs-on: ubuntu-latest
+                                                                                                                                                                              steps:
+                                                                                                                                                                                    - uses: actions/checkout@v3
+                                                                                                                                                                                          - uses: subosito/flutter-action@v2
+                                                                                                                                                                                                  with:
+                                                                                                                                                                                                            channel: 'stable'
+                                                                                                                                                                                                                  - run: flutter build apk --debug
+                                                                                                                                                                                                                        - uses: actions/upload-artifact@v3
+                                                                                                                                                                                                                                with:
+                                                                                                                                                                                                                                          name: maria-apk
+                                                                                                                                                                                                                                                    path: build/app/outputs/flutter-apk/app-debug.apkname: Build Maria APK
+                                                                                                                                                                                                                                                    on: [push]
+                                                                                                                                                                                                                                                    jobs:
+                                                                                                                                                                                                                                                      build:
+                                                                                                                                                                                                                                                          runs-on: ubuntu-latest
+                                                                                                                                                                                                                                                              steps:
+                                                                                                                                                                                                                                                                    - uses: actions/checkout@v3
+                                                                                                                                                                                                                                                                          - uses: subosito/flutter-action@v2
+                                                                                                                                                                                                                                                                                  with:
+                                                                                                                                                                                                                                                                                            channel: 'stable'
+                                                                                                                                                                                                                                                                                                  - run: flutter build apk --debug
+                                                                                                                                                                                                                                                                                                        - uses: actions/upload-artifact@v3
+                                                                                                                                                                                                                                                                                                                with:
+                                                                                                                                                                                                                                                                                                                          name: maria-apk
+                                                                                                                                                                                                                                                                                                                                    path: build/app/outputs/flutter-apk/app-debug.apk# Create a folder under the drive root
+                                                                                                                                                                                                                                                                                                                                    mkdir \actions-runner ; cd \actions-runner
+                                                                                                                                                                                                                                                                                                                                    # Download the latest runner package
+                                                                                                                                                                                                                                                                                                                                    Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.328.0/actions-runner-win-x64-2.328.0.zip -OutFile actions-runner-win-x64-2.328.0.zip
+                                                                                                                                                                                                                                                                                                                                    # Extract the installer
+                                                                                                                                                                                                                                                                                                                                    Add-Type -AssemblyName System.IO.Compression.FileSystem ;
+                                                                                                                                                                                                                                                                                                                                    [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD\actions-runner-win-x64-2.328.0.zip", "$PWD")https://developer.android.com/ndk/guides/abis?hl=es-419#native-code-in-app-packagesexport PUB_HOSTED_URL="https://pub.flutter-io.cn"
+                                                                                                                                                                                                                                                                                                                                    PRIVACIDAD.TXT
+San José 603| 4761234637 | alex9684758@gmail.com
+08/MAY/2026
+Main.dart
+Import ‘package:flutter/material.dart’;
+
+Void main() => runApp(MariaApp());
+
+Class MariaApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Return MaterialApp(
+      Title: ‘MARÍA: Soberanía Real’,
+      Theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.blueGrey[900],
+        scaffoldBackgroundColor: Color(0xFF121212),
+      ),
+      Home: TableroTactico(),
+    );
+  }
 }
+
+Class TableroTactico extends StatelessWidget {
+  Final List<Map<String, dynamic>> fases = [
+    {‘titulo’: ‘FASE 1: RAÍCES’, ‘status’: ‘DESBLOQUEADO’, ‘color’: Colors.green},
+    {‘titulo’: ‘FASE 2: ASISTENCIA’, ‘status’: ‘BLOQUEADO’, ‘color’: Colors.orange},
+    {‘titulo’: ‘FASE 3: PODER’, ‘status’: ‘BLOQUEADO’, ‘color’: Colors.red},
+    {‘titulo’: ‘FASE 4: MAESTRÍA’, ‘status’: ‘BLOQUEADO’, ‘color’: Colors.purple},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    Return Scaffold(
+      appBar: AppBar(title: Text(‘CENTRO DE MANDO MARÍA’)),
+      body: Column(
+        children: [
+          Padding(
+            Padding: EdgeInsets.all(20),
+            Child: Text(“Bienvenido, Guerrero. Selecciona tu nivel de instrucción.”, 
+                 Style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          ),
+          Expanded(
+            Child: ListView.builder(
+              itemCount: fases.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Colors.grey[850],
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                  child: ListTile(
+                    leading: Icon(Icons.security, color: fases[index][‘color’]),
+                    title: Text(fases[index][‘titulo’]),
+                    subtitle: Text(‘Estado: ${fases[index][‘status’]}’),
+                    onTap: () {
+                      if (fases[index][‘status’] == ‘BLOQUEADO’) {
+                        _mostrarDialogoPago(context);
+                      } else {
+                        // Aquí abre el Manual de la Fase 1
+                      }
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Void _mostrarDialogoPago(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(“ACCESO RESTRINGIDO”),
+        content: Text(“Para acceder a este nivel de soberanía y financiar al Maestro, contacta al administrador del sistema.”),
+        actions: [TextButton(onPressed: () => Navigator.pop(context), child: Text(“ENTENDIDO”))],
+      ),
+    );
+  }
+}
+ ‘package:flutter/material.dart’;
+
+Void main() => runApp(MariaApp());
+
+Class MariaApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Return MaterialApp(
+      Title: ‘MARÍA: Soberanía Real’,
+      Theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.blueGrey[900],
+        scaffoldBackgroundColor: Color(0xFF121212),
+      ),
+      Home: TableroTactico(),
+    );
+  }
+}
+
+Class TableroTactico extends StatelessWidget {
+  Final List<Map<String, dynamic>> fases = [
+    {‘titulo’: ‘FASE 1: RAÍCES’, ‘status’: ‘DESBLOQUEADO’, ‘color’: Colors.green},
+    {‘titulo’: ‘FASE 2: ASISTENCIA’, ‘status’: ‘BLOQUEADO’, ‘color’: Colors.orange},
+    {‘titulo’: ‘FASE 3: PODER’, ‘status’: ‘BLOQUEADO’, ‘color’: Colors.red},
+    {‘titulo’: ‘FASE 4: MAESTRÍA’, ‘status’: ‘BLOQUEADO’, ‘color’: Colors.purple},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    Return Scaffold(
+      appBar: AppBar(title: Text(‘CENTRO DE MANDO MARÍA’)),
+      body: Column(
+        children: [
+          Padding(
+            Padding: EdgeInsets.all(20),
+            Child: Text(“Bienvenido, Guerrero. Selecciona tu nivel de instrucción.”, 
+                 Style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          ),
+          Expanded(
+            Child: ListView.builder(
+              itemCount: fases.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Colors.grey[850],
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                  child: ListTile(
+                    leading: Icon(Icons.security, color: fases[index][‘color’]),
+                    title: Text(fases[index][‘titulo’]),
+                    subtitle: Text(‘Estado: ${fases[index][‘status’]}’),
+                    onTap: () {
+                      if (fases[index][‘status’] == ‘BLOQUEADO’) {
+                        _mostrarDialogoPago(context);
+                      } else {
+•	// Aquí abre el Manual de la Fase 1
+                      }
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Void _mostrarDialogoPago(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(“ACCESO RESTRINGIDO”),
+        content: Text(“Para acceder a este nivel de soberanía y financiar al Maestro, contacta al administrador del sistema.”),
+        actions: [TextButton(onPressed: () => Navigator.pop(context), child: Text(“ENTENDIDO”))],
+      ),
+    );
+  }
+}
+
+
+
+privacidad.txt
+lib.main.dart
+ }}
